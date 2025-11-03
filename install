@@ -120,13 +120,7 @@ setup_rootless_docker() {
 install_if_missing "docker" "
   echo '⚠️ Installation will require administrator permissions. You may be prompted for your password.'
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    # Special case for macOS
-    # Install a more well supported version of Docker
-    brew tap-new $USER/local-docker
-    brew tap homebrew/core --force
-    brew extract --version=28.4.0 docker $USER/local-docker
-    brew install docker@28.4.0
-    sudo ln -s /usr/local/Cellar/docker@28.4.0/28.4.0/bin/docker@28.4.0 /usr/local/bin/docker
+    brew install --cask docker
   elif command -v curl &>/dev/null; then
     curl -fsSL https://get.docker.com | sudo bash
     setup_rootless_docker
@@ -148,7 +142,7 @@ if ! command -v conda &>/dev/null; then
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   elif [[ "$OSTYPE" == "darwin"* ]]; then
-    curl -L https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -o miniconda.sh
+   brew install --cask anaconda
   else 
     echo "⚠️ Please install Miniconda manually."
     exit 1
