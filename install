@@ -170,7 +170,7 @@ echo "🔄 Activating conda environment '$ENV_NAME'..."
 conda activate "$ENV_NAME"
 
 if [[ "$CONDA_DEFAULT_ENV" != "$ENV_NAME" ]]; then
-        echo "❌ Could not switch to $ENV_NAME conda environment. Aborting."
+        echo "❌ Could not switch to $ENV_NAME conda environment. You may manually switch to $ENV_NAME by running 'conda activate $ENV_NAME' and then re-run this script to continue. Aborting."
         exit 1
 fi
 
