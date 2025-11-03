@@ -7,13 +7,13 @@ Open up a terminal and run the following command:
 ### MacOS
 
 ```bash
-curl -fsSL https://pathfinding.ai/opss25-setup/install | bash
+curl -fsSL https://pathfinding.ai/opss25-setup/install | eval
 ```
 
 ### Linux
 
 ```bash
-wget -qO- https://pathfinding.ai/opss25-setup/install | bash
+wget -qO- https://pathfinding.ai/opss25-setup/install | eval
 ```
 
 ### Windows
