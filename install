@@ -182,8 +182,8 @@ PLANVIZ_DIR="$PACKAGES_DIR/PlanViz"
 if ! command -v opss25-planviz &>/dev/null; then
   clone_if_missing "$PLANVIZ_REPO" "$PLANVIZ_DIR" "
     echo 'Installing PlanViz...'
-    cd external/PlanViz
-    python -m pip install -r requirements.txt
+    cd external/PlanViz && python -m pip install -r requirements.txt
+    cd python/piglet && python -m pip install -r requirements.txt
   "
 else
   echo "✅ opss25-planviz already in PATH."
