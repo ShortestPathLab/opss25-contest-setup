@@ -217,4 +217,5 @@ echo "👉 And activate your environment: conda activate $ENV_NAME"
 
 echo ""
 
+source ~/.bashrc
 opss25-help
